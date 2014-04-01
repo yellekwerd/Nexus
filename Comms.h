@@ -22,6 +22,15 @@ extern volatile int  UB_Size;
 extern volatile char UART_Process_Flag;
 
 void clear_uart(void);
+char cmd_equals(const char * str, int len);
+
+#define SERIAL "SE"
+#define SERVO_LEFT "SL"
+#define SERVO_NEUTRAL "SN"
+#define SERVO_RIGHT "SR"
+
+#define FILESYS_INIT "fsi"
+
 
 #endif	/* COMMS_H */
 

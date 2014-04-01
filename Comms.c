@@ -19,6 +19,9 @@ volatile char UART_Buffer[10];
 volatile char UART_Process_Flag=0;
 volatile int  UB_Size=0;
 
+volatile FSFILE * data_file;
+
+
 void __attribute__ ((interrupt,no_auto_psv)) _U1RXInterrupt(void){
     U1RX_Clear_Intr_Status_Bit;
     if(U1STAbits.OERR){
@@ -37,4 +40,14 @@ void clear_uart(void){
     }
     UART_Process_Flag=0;
     UB_Size=0;
+}
+
+char cmd_equals(const char * str, int len){
+    int i=0;
+    for(; i<len; i++){
+        if(str[i]!=UART_Buffer[i]){
+            return 0;
+        }
+    }
+    return 1;
 }

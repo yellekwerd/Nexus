@@ -1,5 +1,5 @@
-build/default/production/Init.o:  \
-Init.c  \
+build/default/production/Timing.o:  \
+Timing.c  \
 Includes.h  \
 Init.h  \
 Comms.h  \

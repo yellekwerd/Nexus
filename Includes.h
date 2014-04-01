@@ -17,6 +17,7 @@
 //Required definition for easier use of plib functions
 #define USE_AND_OR
 
+#define VERBOSE
 #include <xc.h> //Includes pic settings/macros
 #include <uart.h>//UART library
 #include <spi.h> //SPI Library
@@ -27,7 +28,7 @@
 #include "Comms.h"
 #include "Timing.h"
 #include "GenIO.h"
-
+#include "FSIO.h"
 
 #endif	/* INCLUDES_H */
 

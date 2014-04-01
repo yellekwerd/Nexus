@@ -78,3 +78,28 @@ void init_pwm(void){
     OC2CONbits.OCM=0;
     OUT_PIN_PPS_RP12 = OUT_FN_PPS_OC2;
 }
+
+void init_spi(void){
+    IN_FN_PPS_SDI2 = IN_PIN_PPS_RP8;
+    OUT_PIN_PPS_RP9 = OUT_FN_PPS_SDO2;
+    OUT_PIN_PPS_RP10 = OUT_FN_PPS_SCK2OUT;
+}
+
+void init_fs(void){
+     if (!MDD_MediaDetect()) {
+        if (FSInit()) {
+#ifdef VERBOSE
+            putsUART1((UINT*) "Filesystem Initialized.\n");
+#endif
+        } else {
+#ifdef VERBOSE
+            putsUART1((UINT*) "Filesystem failed to initialize.\n");
+#endif
+        }
+    } else {
+#ifdef VERBOSE
+        putsUART1((UINT*) "No SDCard detected. Cannot initialize fileystem.\nInsert card and send fsi to initialize system.\n");
+#endif
+    }
+}
+
