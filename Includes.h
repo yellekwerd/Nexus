@@ -25,7 +25,8 @@
 #include <PPS.h> //Peripheral Pin Select library
 #include "Init.h"
 #include "Comms.h"
-
+#include "Timing.h"
+#include "GenIO.h"
 
 
 #endif	/* INCLUDES_H */

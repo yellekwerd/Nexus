@@ -50,7 +50,14 @@ void init_uart(void){
 }
 
 void init_timers(void){
-    
+    long T1_Config = T1_ON | T1_IDLE_CON | T1_PS_1_64 | T1_SOURCE_INT | T1_SYNC_EXT_OFF;
+    OpenTimer1(T1_Config,250); //One ms interrupts
+    EnableIntT1;
+}
+
+void init_io(void){
+    TRISBbits.TRISB15 = 0;
+    TRISAbits.TRISA3 = 0;
 }
 
 void init_pwm(void){
@@ -70,5 +77,4 @@ void init_pwm(void){
     OC2CONbits.OCTSEL=0;
     OC2CONbits.OCM=0;
     OUT_PIN_PPS_RP12 = OUT_FN_PPS_OC2;
-
 }

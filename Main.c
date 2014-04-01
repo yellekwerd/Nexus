@@ -23,6 +23,7 @@ int main() {
 #ifdef VERBOSE
     putsUART1((UINT*)"Nexus Control Board Online...\nFirmware Version 1.0\nVerbose Enabled\n\n");
 #endif
+    CD_LED_Flashing = 1;
     while(1){
         if(UART_Process_Flag){
             if(UART_Buffer[0]=='R'){
@@ -71,7 +72,7 @@ int main() {
             }
 
             else
-                putsUART1("No cmd\n");
+                putsUART1((UINT*)"No cmd\n");
             clear_uart();
 
         }

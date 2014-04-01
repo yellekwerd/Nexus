@@ -25,6 +25,7 @@ void init_pwm(void);
 void init_spi(void);
 void init_uart(void);
 void init_timers(void);
+void init_io(void);
 
 #define SERVO_PERIOD 5999
 #define DEG_P45    3899
